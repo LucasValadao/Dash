@@ -10,5 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class RegistrationController {
 
-    public String register(@RequestBody RegistrationRequest request)
+    private RegistrationService registrationService;
+
+    public String register(@RequestBody RegistrationRequest request){
+        return registrationService.register(request);
+    }
 }
